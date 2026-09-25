@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ─────────────────────────────────────────────────────────────
+       RUNARA by Adhara · Página de colección
+       Estructura:  index.html (contenido)  ·  css/styles.css (diseño)
+                    js/productos.js (catálogo) · js/main.js (movimiento)
+       ───────────────────────────────────────────────────────────── -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Runara by Adhara · Ropa interior consciente</title>
+  <meta name="description" content="Runara by Adhara: lencería consciente, bodies y tangas aptas para tucking. Hecha en Colombia para todas las mujeres." />
+  <meta name="theme-color" content="#3C070A" />
+
+  <!-- Las tipografías (Cormorant Garamond y DM Sans) se cargan desde assets/fonts, ver css/styles.css -->
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="is-loading">
+
+  <!-- Sprite: los símbolos SVG se definen una vez y se reutilizan con <use href="#id"> -->
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="simbolo" viewBox="0 0 704 807"><g transform="translate(0.000000,807.000000) scale(0.100000,-0.100000)" > <path d="M1625 7963 c-378 -36 -717 -188 -987 -442 -347 -328 -515 -694 -535 -1166 -8 -199 30 -460 71 -487 22 -15 73 -8 91 12 20 22 19 32 -10 245 -19 144 -19 284 1 408 79 498 501 923 1044 1052 270 64 473 60 766 -15 479 -123 801 -507 898 -1071 51 -293 -15 -717 -165 -1070 -129 -304 -415 -670 -704 -902 -103 -82 -129 -114 -119 -141 10 -26 44 -28 124 -7 42 10 124 27 184 36 101 16 114 16 200 0 208 -37 374 -146 616 -405 134 -144 196 -195 251 -210 82 -22 107 15 65 97 -38 77 -66 200 -66 295 0 230 86 633 200 944 178 480 456 848 838 1108 296 201 666 276 1012 205 249 -51 415 -134 611 -304 270 -236 429 -518 510 -908 30 -144 31 -160 26 -312 -25 -739 -426 -1418 -1277 -2161 -456 -398 -895 -682 -1612 -1040 -214 -107 -390 -194 -392 -194 -16 0 -625 -306 -681 -342 -219 -141 -321 -379 -286 -667 12 -97 72 -348 93 -389 15 -29 55 -40 74 -20 9 9 21 58 29 121 33 253 237 545 537 768 107 79 498 318 713 434 99 54 246 137 326 186 80 48 194 116 255 152 784 462 1252 803 1707 1247 451 438 739 921 857 1435 44 191 53 287 47 532 -9 417 -103 741 -302 1043 -290 439 -681 689 -1207 771 -130 20 -421 6 -538 -25 -243 -66 -344 -111 -543 -243 -337 -222 -590 -506 -849 -953 -175 -303 -322 -718 -368 -1040 -23 -160 -35 -169 -124 -92 -48 41 -127 84 -316 176 -40 19 -36 43 17 99 68 73 128 154 208 282 37 61 78 126 90 145 119 190 243 551 286 830 41 262 20 645 -46 860 -13 41 -29 95 -35 120 -7 25 -34 90 -60 145 -164 342 -443 601 -803 745 -209 83 -519 132 -722 113z"/> </g></symbol>
+    <symbol id="wordmark" viewBox="0 0 1675 666"><g transform="translate(0.000000,666.000000) scale(0.100000,-0.100000)" > <path d="M135 6546 c-19 -14 -20 -26 -20 -203 0 -103 -1 -825 -3 -1603 l-3 -1415 22 -18 c33 -27 329 -22 356 6 17 17 18 94 18 1562 0 1398 2 1546 16 1560 24 24 956 24 1070 1 190 -40 299 -95 409 -206 84 -84 127 -157 167 -282 25 -77 27 -96 27 -268 1 -174 -1 -191 -27 -285 -55 -191 -147 -325 -287 -418 -146 -97 -442 -143 -830 -130 -129 4 -251 7 -270 6 -48 -4 -67 -25 -54 -60 11 -33 18 -35 215 -57 303 -34 378 -93 853 -661 485 -581 736 -830 1041 -1032 135 -89 343 -200 500 -265 529 -221 1185 -258 1555 -87 159 74 224 126 212 171 -8 33 -40 30 -130 -11 -281 -128 -641 -152 -982 -66 -409 104 -708 280 -1105 652 -192 180 -275 266 -640 668 -379 419 -482 521 -561 563 -106 55 -98 79 32 92 413 40 685 200 829 488 110 220 105 543 -11 799 -123 270 -332 409 -724 480 l-145 27 -755 3 c-654 4 -758 2 -775 -11z M7680 5688 c-96 -13 -233 -63 -324 -116 -99 -59 -230 -182 -275 -258 -45 -77 -80 -124 -92 -124 -5 0 -9 74 -9 183 0 192 -9 250 -40 267 -10 5 -84 10 -164 10 -133 0 -148 -2 -166 -20 -20 -20 -20 -33 -20 -1159 0 -1023 2 -1141 16 -1155 18 -19 3 -17 179 -20 122 -2 164 3 185 21 3 3 7 334 10 736 6 814 0 743 76 962 88 251 263 439 481 516 72 26 262 37 343 20 245 -51 453 -309 520 -645 26 -128 25 -86 21 -900 -2 -593 0 -681 13 -694 12 -12 46 -15 168 -16 167 -2 205 5 213 37 3 12 4 344 2 737 -4 783 0 718 -63 940 -25 88 -128 290 -181 355 -193 237 -561 371 -893 323z M10475 5689 c-283 -34 -584 -198 -573 -312 5 -50 33 -46 108 14 79 64 196 121 310 151 103 27 375 33 470 9 72 -17 185 -72 233 -111 71 -60 142 -183 173 -300 15 -58 37 -380 27 -405 -8 -22 -48 -18 -80 9 -92 77 -322 135 -568 143 -417 14 -727 -77 -937 -275 -162 -153 -238 -336 -238 -570 0 -129 19 -211 76 -329 40 -86 58 -109 138 -188 172 -170 356 -248 612 -262 257 -13 522 54 708 180 93 63 215 175 251 231 46 73 63 86 81 61 8 -10 14 -34 14 -53 0 -18 17 -72 37 -119 73 -171 202 -262 400 -283 126 -13 173 7 173 74 0 30 -29 51 -83 60 -45 8 -95 55 -126 119 -45 93 -50 164 -57 745 -5 475 -8 562 -25 659 -41 241 -137 419 -294 543 -194 154 -547 243 -830 209z m307 -945 c234 -32 416 -122 449 -222 19 -58 6 -426 -20 -523 -92 -355 -369 -570 -753 -586 -156 -7 -225 5 -334 57 -93 45 -183 127 -239 220 -121 200 -117 531 9 753 105 183 241 260 546 310 62 10 239 6 342 -9z M15197 5689 c-298 -44 -587 -208 -587 -333 0 -54 41 -46 129 24 206 165 527 227 827 160 177 -40 360 -234 394 -418 13 -69 33 -370 26 -388 -9 -25 -53 -15 -96 21 -94 78 -333 129 -610 129 -578 0 -950 -202 -1082 -586 -40 -118 -51 -320 -24 -429 75 -291 342 -531 664 -595 95 -18 319 -18 443 1 134 20 269 66 369 125 104 62 253 206 300 291 51 90 84 88 96 -6 18 -140 136 -296 274 -363 72 -35 80 -36 184 -37 107 0 109 0 129 27 32 42 15 77 -46 100 -100 37 -164 122 -187 248 -5 30 -14 327 -19 660 -9 592 -9 607 -33 700 -97 382 -356 594 -803 659 -145 22 -249 25 -348 10z m263 -929 c226 -28 363 -73 462 -152 75 -59 78 -71 78 -290 0 -284 -22 -390 -111 -541 -123 -209 -340 -341 -603 -369 -246 -25 -446 49 -578 216 -188 236 -192 654 -9 884 115 145 260 216 521 255 52 8 159 7 240 -3z M13595 5683 c-242 -32 -508 -197 -620 -385 -42 -70 -74 -110 -85 -103 -3 2 -7 91 -7 197 -1 204 -8 243 -45 257 -40 15 -306 1 -329 -18 -19 -16 -20 -33 -20 -1161 l0 -1145 22 -18 c20 -16 40 -17 177 -14 208 4 192 -21 193 296 5 1156 7 1225 28 1307 75 294 277 526 503 579 148 35 312 6 434 -76 98 -67 129 -47 145 94 16 139 5 154 -140 181 -77 15 -184 19 -256 9z M3610 5648 c-50 -18 -49 -3 -51 -753 -1 -681 -1 -703 21 -819 107 -586 608 -910 1190 -769 232 56 417 193 540 400 70 117 106 124 95 18 -12 -120 -8 -396 6 -410 23 -23 325 -23 347 -1 16 15 17 110 20 1157 l2 1140 -24 24 c-23 23 -26 23 -162 19 -167 -6 -180 -8 -194 -35 -8 -14 -12 -238 -14 -732 l-3 -712 -31 -110 c-54 -193 -119 -313 -236 -433 -164 -170 -343 -243 -561 -229 -246 16 -481 246 -549 538 -44 192 -46 228 -46 947 0 703 -2 742 -38 758 -22 9 -287 11 -312 2z M8375 2284 c-114 -61 -230 -146 -361 -265 -127 -115 -478 -481 -552 -575 -22 -28 -57 -59 -78 -69 -37 -17 -38 -17 -78 4 -55 29 -271 71 -365 71 -125 0 -223 -60 -207 -125 12 -48 57 -46 122 6 l39 31 95 -7 c194 -14 310 -47 310 -88 0 -5 -96 -108 -212 -229 -117 -121 -244 -257 -283 -302 -135 -158 -157 -176 -214 -176 -40 0 -53 -4 -65 -22 -41 -58 8 -134 73 -113 11 3 98 90 193 193 95 103 252 268 348 367 97 99 188 196 202 215 14 20 42 44 62 55 l36 19 52 -26 c29 -14 93 -38 141 -53 l89 -27 -5 -31 c-2 -18 -10 -46 -18 -64 -16 -39 -1 -63 42 -63 26 0 69 32 69 51 0 4 11 21 25 37 l25 30 168 -2 c92 -1 174 -6 181 -10 18 -12 10 -74 -28 -206 -48 -169 -72 -418 -48 -503 14 -52 82 -52 106 0 14 31 14 66 -1 150 -12 74 -6 126 47 367 26 117 50 182 77 203 7 6 74 16 148 22 144 12 322 34 407 52 29 6 57 8 63 4 19 -12 10 -60 -20 -105 -50 -76 -36 -132 43 -165 44 -18 86 1 154 67 59 58 75 56 93 -13 25 -91 100 -126 219 -104 112 22 209 74 302 162 90 86 115 92 113 28 -1 -22 -11 -65 -22 -96 -25 -66 -19 -112 16 -117 34 -5 58 14 105 85 56 84 246 273 274 273 35 0 44 -23 41 -106 -2 -90 13 -129 63 -165 79 -56 255 -18 554 120 57 27 101 41 120 39 30 -3 30 -3 30 -67 1 -54 4 -66 24 -82 43 -35 104 -20 181 42 52 43 75 39 105 -21 37 -72 59 -84 153 -78 134 9 427 107 535 180 32 22 66 38 75 36 28 -5 27 -61 -2 -124 -30 -64 -33 -106 -10 -128 19 -19 18 -19 54 -1 27 14 55 61 93 156 28 70 141 169 193 169 28 0 157 -41 199 -64 38 -20 126 -21 202 -1 32 8 82 18 110 22 64 7 72 -4 48 -73 -19 -58 -8 -97 36 -119 54 -28 109 -15 171 40 47 43 64 44 86 3 9 -17 33 -50 53 -71 48 -54 108 -60 224 -23 44 14 163 50 265 81 294 88 344 113 338 165 -4 35 -30 36 -91 6 -63 -30 -207 -84 -337 -124 -268 -84 -291 -87 -339 -47 -46 40 -56 83 -36 163 27 114 3 142 -125 143 -47 1 -82 -6 -116 -20 -27 -11 -84 -27 -126 -35 -42 -8 -92 -22 -110 -32 -49 -26 -155 -18 -305 22 -28 8 -60 14 -72 14 -13 0 -30 14 -47 39 -41 63 -78 62 -128 -3 -33 -43 -67 -54 -101 -32 -41 27 -71 20 -106 -24 -18 -22 -44 -43 -58 -47 -13 -3 -70 -27 -125 -53 -206 -97 -411 -161 -470 -146 -29 7 -46 45 -46 99 0 24 -7 53 -16 66 -13 18 -15 36 -9 86 6 57 4 65 -14 74 -55 30 -191 5 -290 -53 -199 -115 -472 -216 -626 -232 -87 -9 -105 10 -105 112 0 82 -8 110 -47 159 -62 78 -102 68 -222 -56 -82 -85 -111 -98 -111 -50 0 28 24 63 185 265 104 131 209 327 264 495 48 145 38 211 -31 211 -38 0 -119 -84 -187 -195 -71 -117 -222 -438 -241 -514 -25 -96 -60 -151 -144 -222 -217 -183 -308 -238 -409 -246 -61 -5 -64 -5 -90 27 -15 17 -30 42 -33 55 -13 51 52 214 153 380 111 184 176 324 244 529 33 97 30 133 -8 147 -31 11 -63 -18 -125 -109 -61 -90 -161 -288 -178 -351 -6 -24 -18 -54 -25 -65 -7 -12 -21 -48 -30 -80 -10 -32 -34 -96 -55 -142 -44 -94 -63 -107 -109 -73 -25 18 -37 21 -73 15 -130 -21 -541 -65 -646 -68 -86 -3 -87 -3 -90 22 -1 14 9 57 23 95 71 190 156 467 184 598 44 206 22 299 -84 348 -54 25 -62 24 -140 -17z m112 -79 c75 -52 41 -231 -150 -790 -34 -101 -75 -182 -94 -189 -32 -13 -209 -17 -348 -8 -128 8 -147 11 -230 45 -49 20 -99 37 -111 37 -61 0 -69 58 -16 109 22 20 124 130 228 245 251 279 429 437 589 523 88 47 101 50 132 28z m1828 -382 c-3 -21 -15 -51 -26 -68 -10 -16 -27 -49 -38 -71 -11 -23 -24 -45 -30 -48 -20 -12 -12 37 13 84 13 25 27 56 31 70 21 68 62 94 50 33z m1003 -605 c30 -30 4 -79 -72 -138 -45 -35 -49 -36 -70 -14 -26 25 -19 42 41 105 56 59 79 69 101 47z m-2113 -8 c16 -26 -9 -71 -67 -120 -67 -56 -98 -64 -98 -26 0 62 140 186 165 146z m4075 -5 c36 -44 -98 -183 -150 -155 -40 21 -28 47 54 119 63 54 76 60 96 36z M4286 1648 c-12 -19 -15 -96 -18 -418 -3 -369 -2 -395 15 -398 9 -2 29 6 43 17 39 30 69 26 110 -14 42 -42 57 -43 138 -6 231 105 253 360 42 482 -70 40 -109 38 -149 -6 -32 -37 -66 -45 -86 -21 -8 10 -11 67 -10 185 1 124 -2 175 -11 186 -19 22 -57 18 -74 -7z m267 -389 c32 -17 87 -70 103 -101 38 -73 -1 -175 -95 -246 -73 -55 -116 -35 -175 83 -25 49 -26 53 -12 94 28 78 78 150 116 165 43 18 37 18 63 5z M5084 1282 c-28 -19 -32 -49 -24 -181 13 -186 62 -285 132 -268 21 6 123 112 159 167 25 39 43 17 36 -47 -11 -103 -67 -184 -196 -282 -217 -166 -390 -409 -375 -525 l7 -46 118 0 c101 0 119 2 119 15 0 9 19 37 43 63 106 117 216 304 247 422 27 103 108 212 179 242 25 11 94 42 154 70 59 28 151 65 204 83 106 36 133 58 113 94 -14 27 -53 27 -94 2 -17 -11 -56 -29 -86 -41 -30 -12 -109 -48 -177 -82 -67 -33 -130 -58 -140 -56 -24 4 -29 59 -10 112 19 52 30 212 16 237 -25 47 -86 15 -127 -66 -18 -36 -82 -128 -148 -212 -55 -71 -74 -35 -74 137 0 72 -5 140 -10 151 -11 19 -45 25 -66 11z m164 -708 c5 -34 -123 -253 -197 -339 -85 -97 -92 -102 -127 -72 -23 20 -26 28 -20 60 9 49 84 157 176 254 116 122 161 148 168 97z"/> </g></symbol>
+    <symbol id="logo" viewBox="0 0 1675 1505"><g transform="translate(0.000000,1505.000000) scale(0.100000,-0.100000)" > <path d="M6395 14943 c-378 -36 -717 -188 -987 -442 -347 -328 -515 -694 -535 -1166 -8 -199 30 -460 71 -487 22 -15 73 -8 91 12 20 22 19 32 -10 245 -19 144 -19 284 1 408 79 498 501 923 1044 1052 270 64 473 60 766 -15 479 -123 801 -507 898 -1071 51 -293 -15 -717 -165 -1070 -129 -304 -415 -670 -704 -902 -103 -82 -129 -114 -119 -141 10 -26 44 -28 124 -7 42 10 124 27 184 36 101 16 114 16 200 0 208 -37 374 -146 616 -405 134 -144 196 -195 251 -210 82 -22 107 15 65 97 -38 77 -66 200 -66 295 0 230 86 633 200 944 178 480 456 848 838 1108 296 201 666 276 1012 205 249 -51 415 -134 611 -304 270 -236 429 -518 510 -908 30 -144 31 -160 26 -312 -25 -739 -426 -1418 -1277 -2161 -456 -398 -895 -682 -1612 -1040 -214 -107 -390 -194 -392 -194 -16 0 -625 -306 -681 -342 -219 -141 -321 -379 -286 -667 12 -97 72 -348 93 -389 15 -29 55 -40 74 -20 9 9 21 58 29 121 33 253 237 545 537 768 107 79 498 318 713 434 99 54 246 137 326 186 80 48 194 116 255 152 784 462 1252 803 1707 1247 451 438 739 921 857 1435 44 191 53 287 47 532 -9 417 -103 741 -302 1043 -290 439 -681 689 -1207 771 -130 20 -421 6 -538 -25 -243 -66 -344 -111 -543 -243 -337 -222 -590 -506 -849 -953 -175 -303 -322 -718 -368 -1040 -23 -160 -35 -169 -124 -92 -48 41 -127 84 -316 176 -40 19 -36 43 17 99 68 73 128 154 208 282 37 61 78 126 90 145 119 190 243 551 286 830 41 262 20 645 -46 860 -13 41 -29 95 -35 120 -7 25 -34 90 -60 145 -164 342 -443 601 -803 745 -209 83 -519 132 -722 113z M135 6546 c-19 -14 -20 -26 -20 -203 0 -103 -1 -825 -3 -1603 l-3 -1415 22 -18 c33 -27 329 -22 356 6 17 17 18 94 18 1562 0 1398 2 1546 16 1560 24 24 956 24 1070 1 190 -40 299 -95 409 -206 84 -84 127 -157 167 -282 25 -77 27 -96 27 -268 1 -174 -1 -191 -27 -285 -55 -191 -147 -325 -287 -418 -146 -97 -442 -143 -830 -130 -129 4 -251 7 -270 6 -48 -4 -67 -25 -54 -60 11 -33 18 -35 215 -57 303 -34 378 -93 853 -661 485 -581 736 -830 1041 -1032 135 -89 343 -200 500 -265 529 -221 1185 -258 1555 -87 159 74 224 126 212 171 -8 33 -40 30 -130 -11 -281 -128 -641 -152 -982 -66 -409 104 -708 280 -1105 652 -192 180 -275 266 -640 668 -379 419 -482 521 -561 563 -106 55 -98 79 32 92 413 40 685 200 829 488 110 220 105 543 -11 799 -123 270 -332 409 -724 480 l-145 27 -755 3 c-654 4 -758 2 -775 -11z M7680 5688 c-96 -13 -233 -63 -324 -116 -99 -59 -230 -182 -275 -258 -45 -77 -80 -124 -92 -124 -5 0 -9 74 -9 183 0 192 -9 250 -40 267 -10 5 -84 10 -164 10 -133 0 -148 -2 -166 -20 -20 -20 -20 -33 -20 -1159 0 -1023 2 -1141 16 -1155 18 -19 3 -17 179 -20 122 -2 164 3 185 21 3 3 7 334 10 736 6 814 0 743 76 962 88 251 263 439 481 516 72 26 262 37 343 20 245 -51 453 -309 520 -645 26 -128 25 -86 21 -900 -2 -593 0 -681 13 -694 12 -12 46 -15 168 -16 167 -2 205 5 213 37 3 12 4 344 2 737 -4 783 0 718 -63 940 -25 88 -128 290 -181 355 -193 237 -561 371 -893 323z M10475 5689 c-283 -34 -584 -198 -573 -312 5 -50 33 -46 108 14 79 64 196 121 310 151 103 27 375 33 470 9 72 -17 185 -72 233 -111 71 -60 142 -183 173 -300 15 -58 37 -380 27 -405 -8 -22 -48 -18 -80 9 -92 77 -322 135 -568 143 -417 14 -727 -77 -937 -275 -162 -153 -238 -336 -238 -570 0 -129 19 -211 76 -329 40 -86 58 -109 138 -188 172 -170 356 -248 612 -262 257 -13 522 54 708 180 93 63 215 175 251 231 46 73 63 86 81 61 8 -10 14 -34 14 -53 0 -18 17 -72 37 -119 73 -171 202 -262 400 -283 126 -13 173 7 173 74 0 30 -29 51 -83 60 -45 8 -95 55 -126 119 -45 93 -50 164 -57 745 -5 475 -8 562 -25 659 -41 241 -137 419 -294 543 -194 154 -547 243 -830 209z m307 -945 c234 -32 416 -122 449 -222 19 -58 6 -426 -20 -523 -92 -355 -369 -570 -753 -586 -156 -7 -225 5 -334 57 -93 45 -183 127 -239 220 -121 200 -117 531 9 753 105 183 241 260 546 310 62 10 239 6 342 -9z M15197 5689 c-298 -44 -587 -208 -587 -333 0 -54 41 -46 129 24 206 165 527 227 827 160 177 -40 360 -234 394 -418 13 -69 33 -370 26 -388 -9 -25 -53 -15 -96 21 -94 78 -333 129 -610 129 -578 0 -950 -202 -1082 -586 -40 -118 -51 -320 -24 -429 75 -291 342 -531 664 -595 95 -18 319 -18 443 1 134 20 269 66 369 125 104 62 253 206 300 291 51 90 84 88 96 -6 18 -140 136 -296 274 -363 72 -35 80 -36 184 -37 107 0 109 0 129 27 32 42 15 77 -46 100 -100 37 -164 122 -187 248 -5 30 -14 327 -19 660 -9 592 -9 607 -33 700 -97 382 -356 594 -803 659 -145 22 -249 25 -348 10z m263 -929 c226 -28 363 -73 462 -152 75 -59 78 -71 78 -290 0 -284 -22 -390 -111 -541 -123 -209 -340 -341 -603 -369 -246 -25 -446 49 -578 216 -188 236 -192 654 -9 884 115 145 260 216 521 255 52 8 159 7 240 -3z M13595 5683 c-242 -32 -508 -197 -620 -385 -42 -70 -74 -110 -85 -103 -3 2 -7 91 -7 197 -1 204 -8 243 -45 257 -40 15 -306 1 -329 -18 -19 -16 -20 -33 -20 -1161 l0 -1145 22 -18 c20 -16 40 -17 177 -14 208 4 192 -21 193 296 5 1156 7 1225 28 1307 75 294 277 526 503 579 148 35 312 6 434 -76 98 -67 129 -47 145 94 16 139 5 154 -140 181 -77 15 -184 19 -256 9z M3610 5648 c-50 -18 -49 -3 -51 -753 -1 -681 -1 -703 21 -819 107 -586 608 -910 1190 -769 232 56 417 193 540 400 70 117 106 124 95 18 -12 -120 -8 -396 6 -410 23 -23 325 -23 347 -1 16 15 17 110 20 1157 l2 1140 -24 24 c-23 23 -26 23 -162 19 -167 -6 -180 -8 -194 -35 -8 -14 -12 -238 -14 -732 l-3 -712 -31 -110 c-54 -193 -119 -313 -236 -433 -164 -170 -343 -243 -561 -229 -246 16 -481 246 -549 538 -44 192 -46 228 -46 947 0 703 -2 742 -38 758 -22 9 -287 11 -312 2z M8375 2284 c-114 -61 -230 -146 -361 -265 -127 -115 -478 -481 -552 -575 -22 -28 -57 -59 -78 -69 -37 -17 -38 -17 -78 4 -55 29 -271 71 -365 71 -125 0 -223 -60 -207 -125 12 -48 57 -46 122 6 l39 31 95 -7 c194 -14 310 -47 310 -88 0 -5 -96 -108 -212 -229 -117 -121 -244 -257 -283 -302 -135 -158 -157 -176 -214 -176 -40 0 -53 -4 -65 -22 -41 -58 8 -134 73 -113 11 3 98 90 193 193 95 103 252 268 348 367 97 99 188 196 202 215 14 20 42 44 62 55 l36 19 52 -26 c29 -14 93 -38 141 -53 l89 -27 -5 -31 c-2 -18 -10 -46 -18 -64 -16 -39 -1 -63 42 -63 26 0 69 32 69 51 0 4 11 21 25 37 l25 30 168 -2 c92 -1 174 -6 181 -10 18 -12 10 -74 -28 -206 -48 -169 -72 -418 -48 -503 14 -52 82 -52 106 0 14 31 14 66 -1 150 -12 74 -6 126 47 367 26 117 50 182 77 203 7 6 74 16 148 22 144 12 322 34 407 52 29 6 57 8 63 4 19 -12 10 -60 -20 -105 -50 -76 -36 -132 43 -165 44 -18 86 1 154 67 59 58 75 56 93 -13 25 -91 100 -126 219 -104 112 22 209 74 302 162 90 86 115 92 113 28 -1 -22 -11 -65 -22 -96 -25 -66 -19 -112 16 -117 34 -5 58 14 105 85 56 84 246 273 274 273 35 0 44 -23 41 -106 -2 -90 13 -129 63 -165 79 -56 255 -18 554 120 57 27 101 41 120 39 30 -3 30 -3 30 -67 1 -54 4 -66 24 -82 43 -35 104 -20 181 42 52 43 75 39 105 -21 37 -72 59 -84 153 -78 134 9 427 107 535 180 32 22 66 38 75 36 28 -5 27 -61 -2 -124 -30 -64 -33 -106 -10 -128 19 -19 18 -19 54 -1 27 14 55 61 93 156 28 70 141 169 193 169 28 0 157 -41 199 -64 38 -20 126 -21 202 -1 32 8 82 18 110 22 64 7 72 -4 48 -73 -19 -58 -8 -97 36 -119 54 -28 109 -15 171 40 47 43 64 44 86 3 9 -17 33 -50 53 -71 48 -54 108 -60 224 -23 44 14 163 50 265 81 294 88 344 113 338 165 -4 35 -30 36 -91 6 -63 -30 -207 -84 -337 -124 -268 -84 -291 -87 -339 -47 -46 40 -56 83 -36 163 27 114 3 142 -125 143 -47 1 -82 -6 -116 -20 -27 -11 -84 -27 -126 -35 -42 -8 -92 -22 -110 -32 -49 -26 -155 -18 -305 22 -28 8 -60 14 -72 14 -13 0 -30 14 -47 39 -41 63 -78 62 -128 -3 -33 -43 -67 -54 -101 -32 -41 27 -71 20 -106 -24 -18 -22 -44 -43 -58 -47 -13 -3 -70 -27 -125 -53 -206 -97 -411 -161 -470 -146 -29 7 -46 45 -46 99 0 24 -7 53 -16 66 -13 18 -15 36 -9 86 6 57 4 65 -14 74 -55 30 -191 5 -290 -53 -199 -115 -472 -216 -626 -232 -87 -9 -105 10 -105 112 0 82 -8 110 -47 159 -62 78 -102 68 -222 -56 -82 -85 -111 -98 -111 -50 0 28 24 63 185 265 104 131 209 327 264 495 48 145 38 211 -31 211 -38 0 -119 -84 -187 -195 -71 -117 -222 -438 -241 -514 -25 -96 -60 -151 -144 -222 -217 -183 -308 -238 -409 -246 -61 -5 -64 -5 -90 27 -15 17 -30 42 -33 55 -13 51 52 214 153 380 111 184 176 324 244 529 33 97 30 133 -8 147 -31 11 -63 -18 -125 -109 -61 -90 -161 -288 -178 -351 -6 -24 -18 -54 -25 -65 -7 -12 -21 -48 -30 -80 -10 -32 -34 -96 -55 -142 -44 -94 -63 -107 -109 -73 -25 18 -37 21 -73 15 -130 -21 -541 -65 -646 -68 -86 -3 -87 -3 -90 22 -1 14 9 57 23 95 71 190 156 467 184 598 44 206 22 299 -84 348 -54 25 -62 24 -140 -17z m112 -79 c75 -52 41 -231 -150 -790 -34 -101 -75 -182 -94 -189 -32 -13 -209 -17 -348 -8 -128 8 -147 11 -230 45 -49 20 -99 37 -111 37 -61 0 -69 58 -16 109 22 20 124 130 228 245 251 279 429 437 589 523 88 47 101 50 132 28z m1828 -382 c-3 -21 -15 -51 -26 -68 -10 -16 -27 -49 -38 -71 -11 -23 -24 -45 -30 -48 -20 -12 -12 37 13 84 13 25 27 56 31 70 21 68 62 94 50 33z m1003 -605 c30 -30 4 -79 -72 -138 -45 -35 -49 -36 -70 -14 -26 25 -19 42 41 105 56 59 79 69 101 47z m-2113 -8 c16 -26 -9 -71 -67 -120 -67 -56 -98 -64 -98 -26 0 62 140 186 165 146z m4075 -5 c36 -44 -98 -183 -150 -155 -40 21 -28 47 54 119 63 54 76 60 96 36z M4286 1648 c-12 -19 -15 -96 -18 -418 -3 -369 -2 -395 15 -398 9 -2 29 6 43 17 39 30 69 26 110 -14 42 -42 57 -43 138 -6 231 105 253 360 42 482 -70 40 -109 38 -149 -6 -32 -37 -66 -45 -86 -21 -8 10 -11 67 -10 185 1 124 -2 175 -11 186 -19 22 -57 18 -74 -7z m267 -389 c32 -17 87 -70 103 -101 38 -73 -1 -175 -95 -246 -73 -55 -116 -35 -175 83 -25 49 -26 53 -12 94 28 78 78 150 116 165 43 18 37 18 63 5z M5084 1282 c-28 -19 -32 -49 -24 -181 13 -186 62 -285 132 -268 21 6 123 112 159 167 25 39 43 17 36 -47 -11 -103 -67 -184 -196 -282 -217 -166 -390 -409 -375 -525 l7 -46 118 0 c101 0 119 2 119 15 0 9 19 37 43 63 106 117 216 304 247 422 27 103 108 212 179 242 25 11 94 42 154 70 59 28 151 65 204 83 106 36 133 58 113 94 -14 27 -53 27 -94 2 -17 -11 -56 -29 -86 -41 -30 -12 -109 -48 -177 -82 -67 -33 -130 -58 -140 -56 -24 4 -29 59 -10 112 19 52 30 212 16 237 -25 47 -86 15 -127 -66 -18 -36 -82 -128 -148 -212 -55 -71 -74 -35 -74 137 0 72 -5 140 -10 151 -11 19 -45 25 -66 11z m164 -708 c5 -34 -123 -253 -197 -339 -85 -97 -92 -102 -127 -72 -23 20 -26 28 -20 60 9 49 84 157 176 254 116 122 161 148 168 97z"/> </g></symbol>
+    <symbol id="i-estrella" viewBox="0 0 24 24"><path d="M12 1.5c.5 5.6 4.9 10 10.5 10.5-5.6.5-10 4.9-10.5 10.5C11.5 16.9 7.1 12.5 1.5 12 7.1 11.5 11.5 7.1 12 1.5Z"/></symbol>
+    <symbol id="i-corazon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.1" d="M12 20.5S3 15 3 8.8C3 6 5.2 4 7.7 4c1.8 0 3.3 1 4.3 2.4C13 5 14.5 4 16.3 4 18.8 4 21 6 21 8.8 21 15 12 20.5 12 20.5Z"/></symbol>
+    <symbol id="i-hoja" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M5 19C4 11 9 4.5 20 4c.4 10.5-6 16-15 15Z"/><path d="M5 19 15 9M9.5 14.5h4M12 12V8.5"/></g></symbol>
+    <symbol id="i-destellos" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"><path d="M9 4c.3 3.9 3.1 6.7 7 7-3.9.3-6.7 3.1-7 7-.3-3.9-3.1-6.7-7-7 3.9-.3 6.7-3.1 7-7Z"/><path d="M18 2.5c.1 1.6 1.4 2.9 3 3-1.6.1-2.9 1.4-3 3-.1-1.6-1.4-2.9-3-3 1.6-.1 2.9-1.4 3-3ZM18.5 15c.1 1.3 1.2 2.4 2.5 2.5-1.3.1-2.4 1.2-2.5 2.5-.1-1.3-1.2-2.4-2.5-2.5 1.3-.1 2.4-1.2 2.5-2.5Z"/></g></symbol>
+    <symbol id="i-comunidad" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="7" r="2.6"/><circle cx="5.5" cy="9" r="2.1"/><circle cx="18.5" cy="9" r="2.1"/><path d="M7 20v-3.2a5 5 0 0 1 10 0V20M2 19.5v-2.3A3.6 3.6 0 0 1 6.8 14M22 19.5v-2.3A3.6 3.6 0 0 0 17.2 14"/></g></symbol>
+    <symbol id="i-mano" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11m0-6.5a1.5 1.5 0 0 1 3 0V11m0-5a1.5 1.5 0 0 1 3 0v6m0-3a1.5 1.5 0 0 1 3 0v5.5c0 4-3 7-7 7h-.6c-2.4 0-4.2-1.1-5.5-3L3.6 14a1.5 1.5 0 0 1 2.4-1.8L8 14.5"/></symbol>
+    <symbol id="i-sol" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+    <symbol id="i-luna" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.1" d="M19.5 15.5A8.5 8.5 0 0 1 8.5 4.5a8.5 8.5 0 1 0 11 11Z"/></symbol>
+    <symbol id="i-ciclo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M19.5 12a7.5 7.5 0 1 1-3-6"/><path d="M16.5 2.5v3.5H20"/></g></symbol>
+    <symbol id="i-bolsa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 8h14l-1 12.5H6L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></g></symbol>
+    <symbol id="i-cerrar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.2" d="M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-flecha" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.2" d="M3 12h17m-6-6 6 6-6 6"/></symbol>
+  </svg>
+
+  <!-- ═══════════ 0. Pantalla de entrada ═══════════ -->
+  <div class="loader" aria-hidden="true">
+    <svg class="loader__simbolo"><use href="#simbolo"/></svg>
+    <span class="loader__texto">Runara</span>
+  </div>
+
+  <!-- ═══════════ Cursor personalizado (solo en computador) ═══════════ -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__label">Ver</span></div>
+
+  <!-- ═══════════ 1. Navegación ═══════════ -->
+  <header class="nav" data-nav>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#coleccion">Colección</a>
+      <a href="#lineas">Líneas</a>
+      <a href="#nosotras">Nosotras</a>
+    </nav>
+    <a href="#inicio" class="nav__logo" aria-label="Runara by Adhara, inicio">
+      <svg><use href="#wordmark"/></svg>
+    </a>
+    <div class="nav__acciones">
+      <a href="#circulo" class="nav__cta">Preventa</a>
+      <button class="nav__bolsa" type="button" aria-label="Tu lista de preventa" data-abrir-lista>
+        <svg><use href="#i-bolsa"/></svg><span class="nav__contador" data-contador>0</span>
+      </button>
+      <button class="nav__menu" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-btn><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Menú móvil -->
+  <div class="menu-movil" data-menu>
+    <a href="#coleccion">Colección</a>
+    <a href="#lineas">Líneas</a>
+    <a href="#dia">Un día con Runara</a>
+    <a href="#nosotras">Nosotras</a>
+    <a href="#circulo">Círculo fundador</a>
+    <p class="menu-movil__pie">@runara.by.adhara</p>
+  </div>
+
+  <main>
+
+    <!-- ═══════════ 2. Portada (hero) ═══════════ -->
+    <section class="hero hero--claro" id="inicio">
+      <div class="hero__texto">
+        <p class="eyebrow" data-anim="fade"><svg class="estrella"><use href="#i-estrella"/></svg> Colección 01 · Preventa</p>
+        <h1 class="hero__titulo">
+          <span class="linea"><span>Más que</span></span>
+          <span class="linea"><span>ropa <em>interior</em></span></span>
+        </h1>
+        <p class="hero__sub" data-anim="fade">Somos una experiencia de <span class="carmin">poder</span>, comodidad y <span class="carmin">conexión</span> contigo misma.</p>
+        <div class="hero__botones" data-anim="fade">
+          <a href="#coleccion" class="btn btn--claro" data-magnetico>Ver la colección <svg><use href="#i-flecha"/></svg></a>
+          <a href="#nosotras" class="btn-link">Nuestra historia</a>
+        </div>
+      </div>
+
+      <figure class="hero__imagen" data-parallax="0.12">
+   <img src="assets/img/flatlay-lineas.jpg" alt="Body y tangas Runara sobre lino claro" />      </figure>
+
+      <svg class="hero__simbolo" aria-hidden="true"><use href="#simbolo"/></svg>
+      <span class="hero__vertical" aria-hidden="true">Runara by Adhara</span>
+      <a href="#manifiesto" class="hero__scroll" aria-label="Seguir bajando"><span></span></a>
+    </section>
+
+    <!-- ═══════════ 3. Cinta con valores (marquee) ═══════════ -->
+    <div class="cinta" aria-label="Femenina, libre, consciente, diversa">
+      <div class="cinta__pista">
+        <span>Femenina</span><svg><use href="#i-estrella"/></svg>
+        <span>Libre</span><svg><use href="#i-estrella"/></svg>
+        <span>Consciente</span><svg><use href="#i-estrella"/></svg>
+        <span>Diversa</span><svg><use href="#i-estrella"/></svg>
+        <span>Femenina</span><svg><use href="#i-estrella"/></svg>
+        <span>Libre</span><svg><use href="#i-estrella"/></svg>
+        <span>Consciente</span><svg><use href="#i-estrella"/></svg>
+        <span>Diversa</span><svg><use href="#i-estrella"/></svg>
+      </div>
+    </div>
+
+    <!-- ═══════════ 4. Manifiesto ═══════════ -->
+    <section class="manifiesto" id="manifiesto">
+      <svg class="manifiesto__estrella"><use href="#i-estrella"/></svg>
+      <p class="manifiesto__texto" data-palabras>
+        Nacida de la necesidad de ropa interior que abraza quien eres y transforma la forma en que <em>te ves</em> y <em>te vives.</em>
+      </p>
+      <div class="separador" data-anim="linea"><svg><use href="#i-estrella"/></svg></div>
+      <p class="manifiesto__firma" data-anim="fade">Hecha con intención · Diseñada para durar · Creada para que te sientas bien contigo</p>
+    </section>
+
+    <!-- ═══════════ 5. Nuestras líneas ═══════════ -->
+    <section class="lineas" id="lineas">
+      <header class="encabezado">
+        <p class="eyebrow" data-anim="fade"><svg class="estrella"><use href="#i-estrella"/></svg> Nuestras líneas</p>
+        <h2 class="titulo" data-anim="fade">Dos líneas,<br />una misma esencia</h2>
+      </header>
+
+      <div class="lineas__grid">
+        <article class="linea-card" data-anim="subir">
+          <figure class="linea-card__img" data-revelar><img src="assets/img/flatlay-set.jpg" alt="Body de encaje burdeos junto a caja y bolsa Runara" loading="lazy" /></figure>
+          <div class="linea-card__cuerpo">
+            <span class="linea-card__num">01</span>
+            <h3>Bodies</h3>
+            <p>Diseñados para adaptarse a tu cuerpo como una segunda piel. Realzan, acompañan y te hacen sentir segura en cualquier ocasión.</p>
+            <ul class="lista-estrellas">
+              <li>Siluetas que abrazan sin comprimir</li>
+              <li>Tejidos suaves y transpirables</li>
+              <li>Del día a la noche, de lo casual a lo especial</li>
+            </ul>
+            <button class="btn-link" data-filtro-ir="bodies">Ver bodies <svg><use href="#i-flecha"/></svg></button>
+          </div>
+        </article>
+
+        <article class="linea-card linea-card--desfase" data-anim="subir">
+          <figure class="linea-card__img" data-revelar><img src="assets/img/prod-tanga-burdeos.jpg" alt="Body burdeos, tanga burdeos y tanga nude sobre lino" loading="lazy" /></figure>
+          <div class="linea-card__cuerpo">
+            <span class="linea-card__num">02</span>
+            <h3>Tangas</h3>
+            <p>Para todas las mujeres, en todas sus formas y momentos. Incluye opciones para tucking y para el uso diario: seguridad, discreción y comodidad.</p>
+            <ul class="lista-estrellas">
+              <li>Ajuste seguro y confortable</li>
+              <li>Materiales firmes pero cómodos</li>
+              <li>Costuras planas e invisibles</li>
+            </ul>
+            <button class="btn-link" data-filtro-ir="tangas">Ver tangas <svg><use href="#i-flecha"/></svg></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════ 6. Colección (se llena desde js/productos.js) ═══════════ -->
+    <section class="coleccion" id="coleccion">
+      <header class="encabezado encabezado--fila">
+        <div>
+          <p class="eyebrow" data-anim="fade"><svg class="estrella"><use href="#i-estrella"/></svg> Colección 01</p>
+          <h2 class="titulo" data-anim="fade">La colección</h2>
+        </div>
+        <div class="filtros" role="tablist" aria-label="Filtrar productos" data-filtros>
+          <button class="filtro is-activo" data-filtro="todo" role="tab" aria-selected="true">Todo</button>
+          <button class="filtro" data-filtro="bodies" role="tab" aria-selected="false">Bodies</button>
+          <button class="filtro" data-filtro="tangas" role="tab" aria-selected="false">Tangas</button>
+          <button class="filtro" data-filtro="sets" role="tab" aria-selected="false">Sets y regalo</button>
+          <span class="filtros__marcador" data-marcador></span>
+        </div>
+      </header>
+
+      <div class="productos" data-productos>
+        <!-- Aquí JavaScript dibuja las tarjetas de producto -->
+      </div>
+
+      <p class="coleccion__nota" data-anim="fade">Precios y tallas se anuncian con la preventa. Guarda tus favoritas y te avisamos primero.</p>
+    </section>
+
+    <!-- ═══════════ 7. Un día en la vida de Runara (scroll horizontal) ═══════════ -->
+    <section class="dia" id="dia" data-horizontal>
+      <div class="dia__sticky">
+        <header class="dia__encabezado">
+          <p class="eyebrow"><svg class="estrella"><use href="#i-estrella"/></svg> Identidad de marca</p>
+          <h2 class="titulo">Un día en la vida<br />de Runara</h2>
+          <div class="dia__progreso"><span data-progreso></span></div>
+        </header>
+        <div class="dia__pista" data-pista>
+          <article class="momento">
+            <svg><use href="#i-sol"/></svg><span class="momento__num">06:00</span>
+            <h3>Mañana</h3><p class="momento__lema">Comodidad que te abraza.</p>
+            <p>Piezas suaves, naturales y transpirables para empezar tu día con bienestar.</p>
+          </article>
+          <article class="momento">
+            <svg><use href="#i-hoja"/></svg><span class="momento__num">11:00</span>
+            <h3>Día</h3><p class="momento__lema">Funcionalidad que te acompaña.</p>
+            <p>Diseños invisibles, versátiles y seguros que se adaptan a tu ritmo y a tus planes.</p>
+          </article>
+          <article class="momento">
+            <svg><use href="#i-estrella"/></svg><span class="momento__num">17:00</span>
+            <h3>Tarde</h3><p class="momento__lema">Conexión contigo.</p>
+            <p>Piezas que te recuerdan tu poder, tu sensualidad y tu esencia natural.</p>
+          </article>
+          <article class="momento momento--noche">
+            <svg><use href="#i-luna"/></svg><span class="momento__num">21:00</span>
+            <h3>Noche</h3><p class="momento__lema">Sensualidad que te pertenece.</p>
+            <p>Lencería pensada para celebrar tu cuerpo, tu deseo y tu libertad.</p>
+          </article>
+          <article class="momento">
+            <svg><use href="#i-ciclo"/></svg><span class="momento__num">∞</span>
+            <h3>Siempre</h3><p class="momento__lema">Sostenibilidad y conciencia.</p>
+            <p>Elegimos lo que es bueno para ti, para las demás y para el planeta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 8. Pensado para todas ═══════════ -->
+    <section class="todas">
+      <figure class="todas__img" data-revelar><img src="assets/img/modelo-bata.jpg" alt="Mujer de espaldas con bata de satín burdeos, luz cálida" loading="lazy" /></figure>
+      <div class="todas__texto">
+        <p class="eyebrow" data-anim="fade"><svg class="estrella"><use href="#i-estrella"/></svg> Pensado para todas</p>
+        <h2 class="titulo" data-anim="fade">Para cada cuerpo,<br />para cada historia</h2>
+        <p data-anim="fade">Nuestras prendas están creadas para mujeres cis, mujeres trans, mujeres no binarias y para todas aquellas que buscan ropa interior que se adapte a su cuerpo, su identidad y su estilo de vida.</p>
+        <blockquote class="cita" data-anim="fade">En Runara, la inclusión no es una tendencia. Es parte de nuestro diseño.</blockquote>
+      </div>
+    </section>
+
+    <!-- ═══════════ 9. Valores ═══════════ -->
+    <section class="valores">
+      <header class="encabezado encabezado--centro">
+        <div class="separador" data-anim="linea"><svg><use href="#i-estrella"/></svg></div>
+        <h2 class="titulo titulo--caps" data-anim="fade">Valores</h2>
+      </header>
+      <ul class="valores__grid">
+        <li data-anim="subir"><svg><use href="#i-hoja"/></svg><h3>Autenticidad</h3><p>Honramos la verdad de cada cuerpo y de cada historia.</p></li>
+        <li data-anim="subir"><svg><use href="#i-corazon"/></svg><h3>Inclusión</h3><p>Diseñamos sin excluir, celebrando la diversidad.</p></li>
+        <li data-anim="subir"><svg><use href="#i-hoja"/></svg><h3>Sostenibilidad</h3><p>Elegimos materiales y procesos que cuidan del planeta y de las personas.</p></li>
+        <li data-anim="subir"><svg><use href="#i-comunidad"/></svg><h3>Sororidad</h3><p>Creemos en el poder de acompañarnos y crecer juntas.</p></li>
+        <li data-anim="subir"><svg><use href="#i-destellos"/></svg><h3>Innovación</h3><p>Nuevas formas de crear prendas que unen diseño, tecnología y funcionalidad.</p></li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ 10. Origen / Nosotras ═══════════ -->
+    <section class="origen" id="nosotras">
+      <div class="origen__imgs">
+        <figure class="origen__img origen__img--a" data-parallax="-0.06"><img src="assets/img/modelo-rostro.jpg" alt="Retrato en penumbra con hojas verdes" loading="lazy" /></figure>
+        <figure class="origen__img origen__img--b" data-parallax="0.08"><img src="assets/img/modelo-sombra.jpg" alt="Hombro con tirante de encaje burdeos en la oscuridad" loading="lazy" /></figure>
+      </div>
+      <div class="origen__texto">
+        <p class="eyebrow eyebrow--claro" data-anim="fade"><svg class="estrella"><use href="#i-estrella"/></svg> Origen</p>
+        <h2 class="titulo titulo--claro" data-anim="fade">Una experiencia<br /><em>personal</em></h2>
+        <p data-anim="fade">La fundadora de Runara, Adhara, vivió en carne propia la incomodidad, la falta de opciones y la desconexión que muchas mujeres sentimos con nuestra ropa interior.</p>
+        <p data-anim="fade">Eso la impulsó a crear algo diferente: una marca pensada desde la experiencia real de los cuerpos, las emociones y las necesidades femeninas. Antes de diseñar, escuchamos.</p>
+        <div class="origen__firma" data-anim="fade">
+          <svg><use href="#simbolo"/></svg>
+          <span>by Adhara</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 11. Experiencia / empaque ═══════════ -->
+    <section class="experiencia">
+      <div class="experiencia__texto">
+        <p class="eyebrow" data-anim="fade"><svg class="estrella"><use href="#i-estrella"/></svg> La experiencia Runara</p>
+        <h2 class="titulo" data-anim="fade">Cada detalle,<br />pensado para ti</h2>
+        <ul class="experiencia__lista">
+          <li data-anim="subir"><span>01</span><div><h3>Materiales conscientes</h3><p>Seleccionamos tejidos suaves y duraderos que respetan tu piel.</p></div></li>
+          <li data-anim="subir"><span>02</span><div><h3>Diseño inteligente</h3><p>Cada detalle tiene un propósito: comodidad, estética y funcionalidad.</p></div></li>
+          <li data-anim="subir"><span>03</span><div><h3>Producción ética</h3><p>Trabajamos con talleres conscientes y promovemos el comercio justo.</p></div></li>
+        </ul>
+      </div>
+      <figure class="experiencia__img" data-revelar><img src="assets/img/etiquetas-encaje.jpg" alt="Etiquetas y tarjeta Runara sobre encaje burdeos" loading="lazy" /></figure>
+    </section>
+
+    <!-- ═══════════ 12. Círculo fundador (preventa) ═══════════ -->
+    <section class="circulo" id="circulo">
+      <svg class="circulo__simbolo" aria-hidden="true"><use href="#simbolo"/></svg>
+      <p class="eyebrow eyebrow--claro" data-anim="fade"><svg class="estrella"><use href="#i-estrella"/></svg> Círculo fundador</p>
+      <h2 class="titulo titulo--claro" data-anim="fade">Sé de las primeras</h2>
+      <p class="circulo__texto" data-anim="fade">Acceso anticipado a la preventa, voz en el diseño de nuevas piezas y precio de fundadora.</p>
+      <form class="formulario" data-formulario data-anim="fade" novalidate>
+        <label class="sr-only" for="correo">Tu correo</label>
+        <input id="correo" type="email" name="correo" placeholder="Tu correo electrónico" required autocomplete="email" />
+        <button type="submit" class="btn btn--claro">Quiero unirme</button>
+        <p class="formulario__msg" data-mensaje role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ 13. Pie de página ═══════════ -->
+  <footer class="pie">
+    <svg class="pie__logo" aria-label="Runara by Adhara"><use href="#logo"/></svg>
+    <p class="pie__lema">Segura por dentro. Bella por fuera.</p>
+    <ul class="pie__datos">
+      <li><a href="https://runara.com">runara.com</a></li>
+      <li><a href="https://instagram.com/runara.by.adhara" target="_blank" rel="noopener">@runara.by.adhara</a></li>
+      <li>Hecha en Colombia</li>
+    </ul>
+    <p class="pie__legal">© <span data-anio></span> Runara by Adhara. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- ═══════════ Ventana de detalle de producto ═══════════ -->
+  <div class="detalle" data-detalle aria-hidden="true">
+    <div class="detalle__fondo" data-cerrar></div>
+    <article class="detalle__panel" role="dialog" aria-modal="true" aria-labelledby="detalle-nombre">
+      <button class="detalle__cerrar" data-cerrar aria-label="Cerrar"><svg><use href="#i-cerrar"/></svg></button>
+      <figure class="detalle__img"><img src="" alt="" data-d-img /></figure>
+      <div class="detalle__info">
+        <p class="eyebrow" data-d-linea></p>
+        <h3 id="detalle-nombre" data-d-nombre></h3>
+        <p class="detalle__desc" data-d-desc></p>
+        <ul class="lista-estrellas" data-d-detalles></ul>
+        <p class="detalle__etiqueta">Tallas</p>
+        <div class="tallas" data-d-tallas></div>
+        <button class="btn btn--oscuro" data-d-agregar>Guardar para la preventa</button>
+        <p class="detalle__nota">Precio de fundadora disponible en la preventa.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Aviso breve (toast) -->
+  <div class="aviso" data-aviso role="status" aria-live="polite"></div>
+
+  <!-- JavaScript: primero los datos, luego la lógica -->
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

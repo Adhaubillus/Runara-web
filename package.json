@@ -1,0 +1,9 @@
+{
+  "name": "runara-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Página de colección de Runara by Adhara",
+  "scripts": {
+    "dev": "npx --yes live-server --port=5500"
+  }
+}
